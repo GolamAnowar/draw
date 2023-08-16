@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    transition: all .5s linear;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background : linear-gradient(to bottom, #00ff39, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 1050px;
+}
+.container .tools-board{
+    flex: 1 1 10rem;
+    padding: 2rem;
+}
+.container .drawing-board{
+    flex: 1 1 70rem;
+    height: 600px;
+}
+
+.container section{
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+}
+.container .drawing-board canvas{
+    width: 100%;
+    height: 100%;
+}
+.container .tools-board .row{
+    padding-bottom: 1rem;
+}
+.container .tools-board .row .title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.container .tools-board .row li{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+.container .tools-board .row li.active{
+    color: #00ff39;
+}
+.container .tools-board .row li .range{
+    width: 100%;
+    accent-color: #00ff39;
+}
+.container .color .options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .color .option{
+    width: 22px;
+    height: 22px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.container .color .option:nth-child(1){
+    background: #fff;
+    border: .1rem solid #d1d1d1;
+}
+.container .color .option:nth-child(2){
+    background: #00ff39;
+}
+.container .color .option:nth-child(3){
+    background: red;
+}
+.container .color .option:nth-child(4){
+    background: yellow;
+}
+.container .color .option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+.container .row button{
+    width: 100%;
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: #fff;
+    border: .1rem solid #00ff39;
+    color: #00ff39;
+}
+.container .row button:nth-child(2){
+    background: #00ff39;
+    color: #fff;
+}
+.container .color .option.selected::before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: .1rem solid #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
